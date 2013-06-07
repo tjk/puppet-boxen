@@ -1,9 +1,7 @@
-# Private: Append our environment load to ~/.profile
-
 class boxen::profile {
   require boxen::config
 
-  $profile = "/Users/${::boxen_user}/.profile"
+  $profile = "/Users/${::luser}/.profile"
 
   # This is modeled as an exec instead of a file so people can have
   # classes with a .profile file in 'em.

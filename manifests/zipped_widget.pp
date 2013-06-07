@@ -1,5 +1,3 @@
-# Public: Installed a zipped OS X widget
-
 define boxen::zipped_widget(
                           $source,
                           $ensure = 'present'

@@ -19,21 +19,6 @@
 #     mongodb =>
 #       If true, ensures mongodb is installed.
 #
-#     cassandra =>
-#       If true, ensures cassandra is installed.
-#
-#     zookeeper =>
-#       If true, ensures zookeeper is installed.
-#
-#     beanstalk =>
-#       If true, ensures beanstalk is installed.
-#
-#     nsq =>
-#       If true, ensures nsq is installed.
-#
-#     zeromq =>
-#       If true, ensures zeromq is installed.
-#
 #     mysql =>
 #       If set to true, ensures mysql is installed and creates databases named
 #       "${name}_development" and "${name}_test".
@@ -67,11 +52,6 @@ define boxen::project(
   $elasticsearch = undef,
   $memcached     = undef,
   $mongodb       = undef,
-  $cassandra     = undef,
-  $zookeeper     = undef,
-  $beanstalk     = undef,
-  $nsq           = undef,
-  $zeromq        = undef,
   $mysql         = undef,
   $nginx         = undef,
   $nodejs        = undef,
@@ -108,26 +88,6 @@ define boxen::project(
 
   if $mongodb {
     include mongodb
-  }
-
-  if $cassandra {
-    include cassandra
-  }
-
-  if $zookeeper {
-    include zookeeper
-  }
-
-  if $beanstalk {
-    include beanstalk
-  }
-
-  if $nsq {
-    include nsq
-  }
-
-  if $zeromq {
-    include zeromq
   }
 
   if $mysql {

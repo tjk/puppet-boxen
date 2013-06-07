@@ -18,11 +18,7 @@ end
 
 facts["luser"]          = config.user
 
-if config.respond_to? :repotemplate
-  facts["boxen_repo_url_template"] = config.repotemplate
-else
-  facts["boxen_repo_url_template"] = "https://github.com/%s"
-end
+facts["boxen_repo_url_template"] = ENV['BOXEN_REPO_URL_TEMPLATE'] || "https://github.com/%s"
 
 Dir["#{config.homedir}/config/facts/*.json"].each do |file|
   facts.merge! JSON.parse File.read file

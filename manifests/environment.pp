@@ -1,9 +1,3 @@
-# Public: Set up a basic Boxen environment
-#
-# Usage:
-#
-#   include boxen::environment
-
 class boxen::environment {
   # must be run very early
   require boxen::config

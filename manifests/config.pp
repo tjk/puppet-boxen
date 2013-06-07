@@ -1,9 +1,3 @@
-# Public: Set up necessary Boxen configuration
-#
-# Usage:
-#
-#   include boxen::config
-
 class boxen::config {
   $home              = $::boxen_home
   $bindir            = "${home}/bin"
@@ -29,8 +23,8 @@ class boxen::config {
           $envdir,
           $logdir,
           $socketdir]:
-    ensure => directory,
-    links  => follow
+
+    ensure => directory
   }
 
   file { "${home}/README.md":
