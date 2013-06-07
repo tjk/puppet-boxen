@@ -1,10 +1,10 @@
-# Private: Includes a user's personal manifest based on their username
+# Private: Includes a user's personal manifest based on current user
 
 class boxen::personal {
   $manifests         = "${boxen::config::repodir}/modules/people/manifests"
-  $personal_manifest = "${manifests}/${user}.pp"
+  $personal_manifest = "${manifests}/${::luser}.pp"
 
   if file_exists($personal_manifest) {
-    include "people::${user}"
+    include "people::${::luser}"
   }
 }
